@@ -1,27 +1,55 @@
-# React + TypeScript + Vite
+<p align="center">
+   <img src="preview.png" alt="rener-force" width="480px"/>
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">Sistema de orçamentos</h1>
 
-Currently, two official plugins are available:
+<h3 align="center">
+  :rocket: Projeto voluntário para uma oficina mecânica. 🚀
+</h3>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+# :computer: Tecnologias
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Este projeto foi feito utilizando as seguintes tecnologias:
 
-- Configure the top-level `parserOptions` property like this:
+* [ReactJS](https://reactjs.org/)
+* [Typescript](https://www.typescriptlang.org/)
+* [TailwindCSS](https://tailwindcss.com/)
+* [file-saver](https://www.npmjs.com/package/file-saver)
+* [html-to-image](https://www.npmjs.com/package/html-to-image)
+* [jspdf](https://github.com/parallax/jsPDF)
+* [uuid](https://yarnpkg.com/package?name=uuid)
+* [lottie-react](https://lottiereact.com/)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+## Como Iniciar?
+
+### Requisitos
+
+- [Yarn](https://classic.yarnpkg.com/) ou [npm](https://www.npmjs.com/package/npm)
+
+**Clone o projeto e acesse a pasta**
+
+```bash
+git clone https://github.com/DiogoAMV/budgetSystem.git && cd budgetSystem
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**Siga os passos abaixo**
+
+```bash
+# Instale as dependências
+$ npm install ou yarn
+# Inicie a aplicação
+$ npm run dev ou yarn dev
+```
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+
+---
+
+Feito com :purple_heart: by [Diogo Marques](https://github.com/DiogoAMV)
+
+[![Linkedin Badge](https://img.shields.io/badge/-Diogo%20Marques-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/diogomarques/)](https://www.linkedin.com/in/diogo-amv/) 
+[![Gmail Badge](https://img.shields.io/badge/-contato.diogoamv@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:contato.diogoamv@gmail.com)](mailto:diogo.amv19@gmail.com)
