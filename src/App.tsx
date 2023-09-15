@@ -39,7 +39,70 @@ export default function App() {
   const [isEditModalOpen, setEditModalOpen] = useState(false);
   const [selectedBudget, setSelectedBudget] = useState<Orcamento | null>(null);
   selectedBudget;
-  const [orcamentos, setOrcamentos] = useState<Orcamento[]>([]);
+  const [orcamentos, setOrcamentos] = useState<Orcamento[]>([
+    {
+      id: "1",
+      cliente: "Fulano de Tal",
+      endereco: "Rua dos Bobos, 01",
+      telefone: "(11) 9999-9999",
+      cabecote: "1000",
+      data: "2023-09-20",
+      totalPecas: "500,00",
+      totalMoPecas: "100,00",
+      servicos: [
+        {
+          descricao: "Troca de cabeçote",
+          quantidade: 1,
+          valorUnitario: 500,
+          valorTotal: 500,
+        },
+        {
+          descricao: "Manutenção do motor",
+          quantidade: 1,
+          valorUnitario: 100,
+          valorTotal: 100,
+        },
+      ],
+      mobra: [
+        {
+          orcamento: "1",
+          maodeobra: "Mão de obra",
+          totalmo: "100",
+        },
+      ],
+    },
+    {
+      id: "2",
+      cliente: "Beltrano de Tal",
+      endereco: "Rua da Paz, 02",
+      telefone: "(11) 8888-8888",
+      cabecote: "2000",
+      data: "2023-09-21",
+      totalPecas: "1000,00",
+      totalMoPecas: "200,00",
+      servicos: [
+        {
+          descricao: "Troca de motor",
+          quantidade: 1,
+          valorUnitario: 1000,
+          valorTotal: 1000,
+        },
+        {
+          descricao: "Manutenção da suspensão",
+          quantidade: 1,
+          valorUnitario: 200,
+          valorTotal: 200,
+        },
+      ],
+      mobra: [
+        {
+          orcamento: "2",
+          maodeobra: "Mão de obra",
+          totalmo: "200",
+        },
+      ],
+    },
+  ]);
   const [editingOrcamento, setEditingOrcamento] = useState<Orcamento | null>(
     null
   );
@@ -51,31 +114,6 @@ export default function App() {
 
   // Função para salvar um novo orçamento
   const handleSaveBudget = async (novoOrcamento: Orcamento) => {
-    // Calcula quantos serviços faltam para atingir 15
-    const servicosFaltando = 15 - novoOrcamento.servicos.length;
-
-    // Adiciona serviços em branco para atingir 15
-    for (let i = 0; i < servicosFaltando; i++) {
-      novoOrcamento.servicos.push({
-        descricao: "",
-        quantidade: 0,
-        valorUnitario: 0,
-        valorTotal: 0,
-      });
-    }
-
-    // Calcula quantas mão de obras faltam para atingir 15
-    const moFaltando = 8 - novoOrcamento.mobra.length;
-
-    // Adiciona Mo em branco para atingir 8
-    for (let i = 0; i < moFaltando; i++) {
-      novoOrcamento.mobra.push({
-        orcamento: "",
-        maodeobra: "",
-        totalmo: "",
-      });
-    }
-
     try {
       setOrcamentos([...orcamentos, novoOrcamento]);
       novoOrcamento.id = uuidv4();
@@ -107,46 +145,6 @@ export default function App() {
 
   // Função para editar um orçamento existente
   const handleSaveEditOrcamento = async (orcamentoEditado: Orcamento) => {
-    // Filtra apenas os serviços que atendem aos critérios
-    orcamentoEditado.servicos = orcamentoEditado.servicos.filter(
-      (servico) =>
-        servico.descricao !== "" ||
-        servico.quantidade !== 0 ||
-        servico.valorUnitario !== 0 ||
-        servico.valorTotal !== 0
-    );
-
-    // Calcula quantos serviços faltam para atingir 15
-    const servicosFaltando = 15 - orcamentoEditado.servicos.length;
-
-    // Adiciona serviços em branco para atingir 15
-    for (let i = 0; i < servicosFaltando; i++) {
-      orcamentoEditado.servicos.push({
-        descricao: "",
-        quantidade: 0,
-        valorUnitario: 0,
-        valorTotal: 0,
-      });
-    }
-
-    // Filtra apenas as mão de obras que atendem aos critérios
-    orcamentoEditado.mobra = orcamentoEditado.mobra.filter(
-      (mobra) =>
-        mobra.maodeobra !== "" || mobra.orcamento !== "" || mobra.totalmo !== ""
-    );
-
-    // Calcula quantas mão de obras faltam para atingir 15
-    const moFaltando = 8 - orcamentoEditado.mobra.length;
-
-    // Adiciona Mo em branco para atingir 8
-    for (let i = 0; i < moFaltando; i++) {
-      orcamentoEditado.mobra.push({
-        orcamento: "",
-        maodeobra: "",
-        totalmo: "",
-      });
-    }
-
     try {
       setOrcamentos((prevOrcamentos) =>
         prevOrcamentos.map((orcamento) =>

@@ -26,10 +26,10 @@ export default function BudgetTable({ orcamento }: BudgetTableProps) {
             <img src={logo} alt="" />
           </th>
           <th className="border border-gray-950 font-normal p-4 w-[554px]">
-            Rener Force Especial Heads Turbo e Aspro <br /> Endereço: Rua: Osmar
-            Sales Monteiro, 740- Presidente Roosevelt. CEP: 38401-036
-            Uberlandia-MG <br /> Preparados (34) 99290-1704 Rener <br />{" "}
-            Originais (34) 99635-6656 Raphael
+            Rener Force Especial Heads Turbo e Aspro <br /> Endereço: Rua: Rua
+            do fulano de não sei das quantas. CEP: 99999-999 Uberlandia-MG{" "}
+            <br /> Preparados (34) 99999-9999 Rener <br /> Originais (34)
+            99999-9999 Fulano
           </th>
         </tr>
         <tr>
